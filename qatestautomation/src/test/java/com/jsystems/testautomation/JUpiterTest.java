@@ -43,6 +43,7 @@ public class JUpiterTest extends ConfigJUpiter {
     public class JupiterNestedClass {
         String testowyString = "firstTest";
 
+        @Tag("all")
         @Test
         @DisplayName("Test for checking string test")
         public void firstNestedTest() {
@@ -67,7 +68,7 @@ public class JUpiterTest extends ConfigJUpiter {
 
 
         }
-
+        @Tag("all")
         @Test
         @DisplayName("ARRAYS TESTY")
         public void arraysTest() {
@@ -88,7 +89,7 @@ public class JUpiterTest extends ConfigJUpiter {
 
 
         }
-
+        @Tag("all")
         @Test
         @DisplayName("JCABI TESTY")
         public void jcabiTest() {

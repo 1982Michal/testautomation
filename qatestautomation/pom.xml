@@ -21,6 +21,15 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 </properties>
 
+    <profiles>
+        <profile>
+            <id>allTest</id>
+            <properties>
+            <tests>all</tests>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
 
@@ -63,6 +72,10 @@
                     <includes>
                         <include>**/*Test.java</include>
                     </includes>
+                    <properties>
+                        <includeTags>${tests}</includeTags>
+                        <excludeTags>${exTest}</excludeTags>
+                    </properties>
                 </configuration>
             </plugin>
         </plugins>
@@ -88,6 +101,14 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
+            <version>5.1.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
             <version>5.1.1</version>
             <scope>test</scope>
         </dependency>
